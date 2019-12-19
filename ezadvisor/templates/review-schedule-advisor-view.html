@@ -67,7 +67,7 @@
               <hr>
               <p id="schedule-classes">
                 {% for i in classes %}
-                {{ i.course_id|string + ' - ' + i.section_num|string + ' - ' + i.start_time.strftime('%-I:%M %p') + '-' + i.end_time.strftime('%-I:%M %p') + ' - ' + i.day }} 
+                {{ i.course_id|string + ' - ' + i.section_num|string + ' - ' + i.start_time + '-' + i.end_time + ' - ' + i.day }} 
                 <br>
                 {% endfor %}
               </p>
