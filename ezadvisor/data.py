@@ -101,7 +101,7 @@ class Courses(db.Model):
     crn = db.Column(db.Integer, primary_key=True)
     course_id = db.Column(db.String(10), db.ForeignKey('catalog.course_id'))
     course_title = db.Column(db.String(40))
-    section_num = db.Column(db.Integer)
+    section_num = db.Column(db.String(10))
     semester = db.Column(db.String(10), db.ForeignKey('semester.semester'))
     professor_name = db.Column(db.String(25))
     day = db.Column(db.String(5))
@@ -114,7 +114,7 @@ class Courses(db.Model):
         return f"Courses('{self.course_id}', '{self.section_num}', '{self.semester}', '{self.day}', '{self.start_time_MWF}', '{self.end_time_MWF}', '{self.start_time_TTh}', '{self.end_time_MWF}')"
 
 class Semester(db.Model):
-    semester = db.Column(db.String(10), primary_key=True)
+    semester = db.Column(db.String(30), primary_key=True)
     course_present = db.relationship('Courses', backref='semester_taken')
 
     def __repr__(self):
