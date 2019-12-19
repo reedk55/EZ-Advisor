@@ -1,0 +1,633 @@
+html,body {
+    margin:0;
+    padding:0;
+    height: 100%;
+    overflow: auto !important;
+}
+
+body {
+    background-color: #07CB8B;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-brand, #logo-top-of-page {
+    width: 34px;
+    height: 66px;
+}
+
+.navbar-brand {
+    position: absolute;
+    left: 50%;
+    top: 5px;
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar {
+    padding: 1.2em 1.2em;
+}
+
+#logo-bar, .navbar {
+    background-color: white;
+    box-shadow: 0px 3px 5px 0.5px rgba(0,0,0,0.67);
+}
+
+.btn {
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.back-button {
+    background-color: white;
+    margin-top: 1em;
+    color: #07CB8B;
+    width: 100px;
+}
+
+.back-button:hover {
+    background-color: #07CB8B;
+    color: white;
+}
+
+.page-header {
+    color: white;
+}
+
+.footer {
+    background-color: white;
+    text-align: center;
+    height: 70px;
+}
+
+.footer-button {
+    background-color: white;
+    color: #07CB8B;
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.alert-custom { 
+    background-color: white;
+    color:black;
+  }
+
+/*------SWUP ANIMATIONS--------*/
+
+.transition-fade {
+    opacity: 1;
+    transition: 500ms;
+    transform: translateX(0);
+    transform-origin: left;
+}
+
+html.is-animating .transition-fade {
+    opacity: 1;
+    transform: translateX(100%);
+}
+
+html.is-leaving .transition-fade {
+    opacity: 0;
+    transform: translateX(0);
+}
+
+/*------------------------------*/
+
+
+/*---------INDEX.HTML-----------*/
+#logo {
+    width: 130px;
+    height: 254px;
+}
+
+#logo-container {
+    display: none;
+}
+
+#login-container {
+    display: none;
+}
+
+#advisor-text {
+    color:#43ab7e; 
+    font-size:35px; 
+    letter-spacing:8px;
+}
+
+#login-form {
+    border: 2px solid white;
+}
+
+#login-header {
+    color:white;
+}
+
+/*------------------------------*/
+
+
+/*-------LOGIN-CHOICE.HTML-----------
+
+.login-choice-button {
+    background-color:white; 
+    height:250px; 
+    color:#07CB8B;
+    font-size: 45px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.login-choice-button:hover {
+    background-color:#07CB8B;
+    color: white;
+}
+
+------------------------------------*/
+
+
+/*----------LOGIN.HTML---------------*/
+#login-box {
+    border: 2px solid white;
+}
+
+#login-header {
+    color:white;
+}
+
+#btn-login-submit {
+    background-color: white;
+    color: #07CB8B;
+    font-size: 18px;
+    margin-top: 2rem;
+}
+
+#btn-login-submit:hover {
+    background-color: #07CB8B;
+    color: white;
+}
+
+.input-login{
+    border-bottom: 1px solid white;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    background-color: #07CB8B;
+    border-radius: 0;
+    color: white;
+}
+
+.input-login::placeholder {
+    color:white;
+    font-size: 12px;
+}
+
+.input-login:focus{
+    background-color: #07CB8B;
+    outline: none;
+    color:white;
+}
+/*------------------------------------*/
+
+
+/*--------GET-STARTED.HTML--------------*/
+
+#welcome-message-1 {
+    display: none;
+    color: white;
+    margin-top: 10em;
+    letter-spacing: 3px;
+}
+
+#welcome-message-2 {
+    display: none;
+    color: white;
+    margin-top: 3em;
+    letter-spacing: 3px;
+}
+
+#get-started-container {
+    display: none;
+}
+
+#get-started-message {
+    margin-top: 10em;
+}
+
+#btn-get-started {
+    background-color: white;
+    color: #07CB8B;
+    font-size: 18px;
+    margin-top: 30px;
+    width: 60%;
+    font-size: 25px;
+}
+
+#btn-get-started:hover {
+    background-color: #07CB8B;
+    color: white;
+}
+/*------------------------------------*/
+
+
+/*-----------WELCOME.HTML-------------*/
+.welcome1-message {
+    color: white;
+    letter-spacing: 3px;
+}
+/*------------------------------------*/
+
+
+/*-------BUILD-SCHEDULE.HTML-----------*/
+#build-schedule-button {
+    background-color: white; 
+    height:250px; 
+    color:#07CB8B;
+    font-size: 40px;
+}
+
+#build-schedule-button:hover {
+    background-color:#07CB8B;
+    color: white;
+}
+/*------------------------------------*/
+
+
+
+/*-------SELECT-CAMPUS.HTML-----------*/
+#select-campus-header {
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.select-campus-button {
+    background-color:white;
+    color: #07CB8B; 
+    height:100px; 
+    font-size: 35px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.select-campus-button:hover {
+    background-color:#07CB8B;
+    color: white;
+}
+/*------------------------------------*/
+
+
+/*-------SELECT-TERM.HTML-----------*/
+
+#select-term-header {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.select-term-button {
+    background-color:white; 
+    height:225px; 
+    color:#07CB8B;
+    font-size: 45px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.select-term-button:hover {
+    background-color:#07CB8B;
+    color: white;
+}
+
+/*------------------------------------*/
+
+
+/*-------SELECT-SUBJECT.HTML-----------*/
+
+#select-subject-header {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.select-subject-button {
+    background-color:white; 
+    height:225px; 
+    color:#07CB8B;
+    font-size: 45px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.select-subject-button:hover {
+    background-color:#07CB8B;
+    color: white;
+}
+
+.select-other-button {
+    background-color:white; 
+    height:60px; 
+    color:#07CB8B;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.select-other-button:hover {
+    background-color:#07CB8B;
+    color: white;
+}
+/*------------------------------------*/
+
+/*-------SEARCH-RESULTS.HTML-----------*/
+#select-course-header {
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.select-course-button {
+    background-color:white;
+    color: #07CB8B;  
+    height:50px; 
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.select-course-button:hover {
+    background-color:#07CB8B;
+    color: rgb(255, 255, 255);
+}
+
+#search-results-container, #class-sections-container {
+    min-height: calc(100vh - 146px)
+}
+/*------------------------------------*/
+
+
+/*-------CLASS-SECTIONS.HTML-----------*/
+
+#select-class-section-header {
+    margin-bottom: 40px;
+    margin-top: 30px;
+}
+.course-details-header {
+    font-size: 12px;
+}
+
+.select-class-section-button {
+    background-color:white;
+    color: black;  
+    height: 50px; 
+    font-size: 12px;
+    margin-bottom: 40px;
+    padding: 0px;
+}
+
+.select-class-section-button:hover {
+    background-color:#07CB8B;
+    color: white;
+}
+
+#class-sections-modal-content {
+    border: 3px solid black;
+    border-radius: 0.5rem;
+}
+
+#class-sections-modal-body {
+    padding: 2rem 0.5rem 0.5rem 2rem;
+}
+
+#class-sections-modal-text {
+    color: #545353;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+#class-sections-modal-footer {
+    justify-content: space-around;
+}
+
+.class-sections-modal-button {
+    background-color: #07CB8B;
+    color: white;
+    width: 30%;
+    height: 60%;
+}
+
+.class-sections-modal-button:hover {
+    background-color: white;
+    color: #07CB8B;
+}
+
+
+/*------------------------------------*/
+
+
+/*-----------COMPLETED-SCHEDULE.HTML/REVIEW-SCHEDULE.HTML-------------*/
+
+#view-feedback-link {
+    color: white;
+    text-decoration: underline;
+    font-size: 22px;
+}
+
+#status-header {
+    display: inline-block;
+}
+
+#schedule-container {
+    display: none;
+}
+
+#completed-schedule-message-1 {
+    display: none;
+    margin-top: 10em;
+    color: white;
+    letter-spacing: 3px;
+}
+
+#completed-schedule-message-2 {
+    display: none;
+    margin-top: 4em;
+    color: white;
+    letter-spacing: 3px;
+}
+
+#schedule {
+    border: 2px solid black;
+    border-radius: 0.5rem;
+    color: #545353;
+    background-color: white;
+}
+
+#schedule-classes {
+    line-height: 3;
+}
+
+.review-schedule-button {
+    background-color: white;
+    color: #07CB8B;
+    font-size: 22px;
+    width: 80%;
+    margin-bottom: 2em;
+}
+
+.review-schedule-button:hover {
+    background-color: #07CB8B;
+    color: white;
+}
+
+hr {
+    border: 1px solid #969393;
+}
+
+.approve-schedule-button-student {
+    background-color: white;
+    color: #07CB8B;
+    width: 40%;
+    font-size: 22px;
+}
+
+
+/*-------------------------------------------------------*/
+
+
+/*------------SELECT SUBJECT 2------------------------*/
+#subject-button-next {
+    background-color: white;
+    color: #07CB8B;
+}
+
+#subject-button-next:hover {
+    background-color: #07CB8B;
+    color: white;
+}
+/*-------------------------------------------------------*/
+
+
+/*------------APPROVE-SCHEDULES.HTML------------------------*/
+.approve-schedules-header {
+    font-size: 14px;
+}
+
+.view-link {
+    background: none;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    color: blue;
+    cursor: pointer;
+}
+/*-------------------------------------------------------*/
+
+
+/*------------REVIEW-SCHEDULE-ADVISOR-VIEW.HTML------------------------*/
+
+#feedback-modal-footer, #approval-modal-footer {
+    justify-content: space-around;
+}
+
+.feedback-modal-button, .approval-modal-button {
+    background-color: #07CB8B;
+    color: white;
+    width: 30%;
+    height: 60%;
+}
+
+.feedback-modal-button:hover, .approval-modal-button:hover {
+    background-color: white;
+    color: #07CB8B;
+}
+
+#schedule-approved-modal-body, #feedback-sent-modal-body {
+    text-align: center;
+}
+/*-------------------------------------------------------*/
+
+
+/*------------ADVISOR-INFO.HTML--------------------*/
+#advisor-info {
+    border: 2px solid black;
+    border-radius: 0.5rem;
+    color: #545353;
+    background-color: white;
+}
+
+#advisor-info-content {
+    line-height: 3;
+}
+
+#advisor-email, #advisor-phone {
+    color: inherit;
+}
+/*-------------------------------------------------------*/
+
+
+
+
+
+@media (min-width: 576px) { 
+    .select-course-button {
+        font-size: 16px;
+    } 
+
+    .course-details-header {
+        font-size: 14px;
+    }
+
+    .select-class-section-button {
+        font-size: 14px;
+    }
+
+    .input-login::placeholder {
+        font-size: 14px;
+    }
+
+    .approve-schedules-header {
+        font-size: 16px;
+    }
+
+    .student-info {
+        font-size: 16px;
+    }
+
+}
+
+@media (min-width: 768px) { 
+    .select-course-button {
+        font-size: 18px;
+    }  
+
+    .input-login::placeholder {
+        font-size: 16px;
+    }
+
+    .approve-schedules-header {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 992px) { 
+    .select-course-button {
+        font-size: 18px;
+    } 
+
+}
+
+@media (min-width: 1200px) { 
+    .select-course-button {
+        font-size: 20px;
+    }  
+
+}

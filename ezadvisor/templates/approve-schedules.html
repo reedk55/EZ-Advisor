@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>EZ Advisor</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
+  </head>
+  
+  <body>
+    
+    <!--Navbar start-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!--Right now the logo in the navbar links page to index.html but this may not be the best design choice. Should the logo even be a link? We don't really have a home page. It's more for convenience at this stage.-->
+      <a href="{{ url_for('get_started')}}"><img class="navbar-brand" src="{{ url_for('static', filename='images/ez_trimmed.png')}}"></a>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!--Navbar end-->
+
+    <!--Schedule start-->
+    <!--This section currently contains static hard-coded data.-->
+    <!--The data in this section needs to be dynamic-->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-11 col-md-10 col-lg-10 col-xl-10 mx-auto text-center">
+          <div class="row">
+            <div class="col">
+              <h1 id="approve-schedules-header" class="page-header my-5">Approve Schedules</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div id="schedule" class="col p-4 mx-5">
+              <div class="row">
+                <div class="col">
+                  <span class="approve-schedules-header"><Strong>VIP ID</Strong></span><!--This does not need to be dynamic-->
+                </div>
+                <div class="col">
+                  <span class="approve-schedules-header"><Strong>Name</Strong></span><!--This does not need to be dynamic-->
+                </div>
+                <div class="col">
+                  <span class="approve-schedules-header"><Strong>Semester</Strong></span><!--This does not need to be dynamic-->
+                </div>
+                <div class="col">
+                  <span class="approve-schedules-header"><Strong>Submit Date</Strong></span><!--This does not need to be dynamic-->
+                </div>
+                <div class="col">
+                  <span class="approve-schedules-header"><Strong>Status</Strong></span><!--This does not need to be dynamic-->
+                </div>
+                <div class="col">
+                  <span class="approve-schedules-header"><Strong></Strong></span><!--This does not need to be dynamic-->
+                </div>
+              </div>
+              <hr>
+              {% for i in schedules %}
+              <form action="" method="POST" role="form">
+                <div class="row">
+                  <div class="col">
+                    <input type="hidden" name="view_schedule_vip_id" value= "{{ i.student_vip_id }}" />
+                    <span class="student-info">{{ i.student_vip_id }}</span>
+                  </div>
+                  <div class="col">
+                    <input type="hidden" name="view_schedule_name" value= "{{ i.name }}" />
+                    <span class="student-info">{{ i.name }}</span>
+                  </div>
+                  <div class="col">
+                    <input type="hidden" name="view_schedule_semester" value= "{{ i.semester }}" />
+                    <span class="student-info">{{ i.semester }}</span>
+                  </div>
+                  <div class="col">
+                    <span class="student-info">{{ i.submitted_date.strftime('%m/%d/%Y')}}</span>
+                  </div>
+                  <div class="col">
+                    <span class="student-info">{{ i.status }}</span>
+                  </div>
+                  <div class="col">
+                    <input type="submit" class="view-link" value="View"/>
+                  </div>
+                </div>
+                <br>
+              </form>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Schedule end-->
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='swup.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='script.js')}}"></script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>EZ Advisor</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <!--Logo container start-->
+    <!--This part will fade in first for a few seconds and then fade away-->
+    <div id="logo-container" class="container-fluid h-100">
+      <div class="row h-75 align-items-center">
+        <div class="col-7 col-sm-6 col-md-5 col-lg-4 col-xl-3 mx-auto text-center">
+          <div class="row border border-white">
+            <div class="col">
+              <img id="logo" src="{{ url_for('static', filename='images/ez_trimmed.png') }}">
+            </div>
+          </div>
+          <div class="row bg-light">
+            <div class="col">
+              <span id="advisor-text">ADVISOR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Logo container end-->
+      
+    <!--Login container start-->
+    <!--This part is the login screen-->
+    <!--This part will slide onto the page from the left after the part above fades away-->
+    <!--The information submitted in this section needs to be validated-->
+    <div id="login-container" class="container-fluid h-100">
+      <div class="row h-75 align-items-center">
+        <div class="col-8 col-sm-7 col-md-6 col-lg-5 col-xl-4 mx-auto text-center">
+          <div id="login-form" class="p-5">
+            <h2 id="login-header" class="text-center mb-3">Login</h2>
+            <form action="" method="post" role="form">
+              {{ form.hidden_tag() }}
+              <div class="form-group">
+                {{ form.username(class_="form-control input-login") }}
+              </div>
+              <div class="form-group">
+                  {{ form.password(class_="form-control input-login") }}
+              </div>
+              {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                  {% for message in messages %}
+                    <span id="login-error-message" style="color: red;">{{ message }}</span><br>
+                  {% endfor %}
+              {% endif %}
+              {% endwith %}
+              {{ form.submit(class_="btn btn-block", id="btn-login-submit") }}
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Login container end-->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){      
+        $('#logo-container').delay(500).fadeIn(1000, function(){
+          $('#logo-container').delay(2000).fadeOut("slow", function(){
+            $('#login-container').show(1000);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
