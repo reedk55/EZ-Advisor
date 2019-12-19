@@ -110,7 +110,7 @@
                     </div>
                     <div class="col">
                       <!--The start time and end time of the class-->
-                      {{i['start_time']}} - {{i['end_time']}}
+                      {{i['start_time'].strftime('%-I:%M %p')}} - {{i['end_time'].strftime('%-I:%M %p')}}
                     </div>
                   </div>
                 </button>
@@ -142,7 +142,7 @@
                   <input type="hidden" name="course_semester" value= "{{ section.semester }}" />
                   Semester: {{ section.semester }}<br>
                   Days: {{ section.day }}<br>
-                  Time: {{ section.start_time }} - {{ section.end_time }}<br>
+                  Time: {{ section.start_time.strftime('%-I:%M %p') }} - {{ section.end_time.strftime('%-I:%M %p') }}<br>
                 </p>
               </div>
               <!--Submit the chosen class section to the database on the server when the student selects the ADD button-->
